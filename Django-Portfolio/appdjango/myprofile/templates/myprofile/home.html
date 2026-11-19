@@ -1,0 +1,513 @@
+
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Jyostni Mohinta | Portfolio</title>
+
+    <meta name="description"
+          content="Jyostni Mohinta - Computer Science Engineering student interested in Software Development, Machine Learning and Quantum Computing.">
+
+    <link rel="stylesheet"
+          href="{% static 'css/style.css' %}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+
+<header class="header">
+    <a href="#home" class="logo">JM<span>.</span></a>
+
+    <button class="menu-toggle" id="menu-toggle"
+            aria-label="Toggle navigation"
+            aria-expanded="false">
+        <i class="fa-solid fa-bars"></i>
+    </button>
+
+    <nav class="navbar" id="navbar">
+        <a href="#home" class="active">Home</a>
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#activities">Activities</a>
+        <a href="#contact" class="contact-btn">Contact</a>
+    </nav>
+</header>
+
+
+<!-- HOME SECTION -->
+
+<section class="home" id="home">
+
+    <div class="home-content">
+
+        <p class="intro-label">HELLO, I'M</p>
+
+        <h1>Jyostni <span>Mohinta</span></h1>
+
+        <h2>Computer Science Engineering Student</h2>
+
+        <p class="description">
+            Passionate about building meaningful technology
+            solutions through programming, web development
+            and intelligent systems.
+
+            Exploring the possibilities of Machine Learning
+            and Quantum Computing.
+        </p>
+
+        <div class="home-buttons">
+            <a href="#projects" class="btn">Explore Projects</a>
+            <a href="#contact" class="btn secondary-btn">
+                Get In Touch
+            </a>
+        </div>
+
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/jyostni-mohinta/"
+               target="_blank" rel="noopener noreferrer"
+               aria-label="LinkedIn">
+                <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+
+            <a href="mailto:jyostni.mohinta@gmail.com"
+               aria-label="Email">
+                <i class="fa-solid fa-envelope"></i>
+            </a>
+        </div>
+
+    </div>
+
+    <div class="home-image">
+        <div class="image-background"></div>
+
+        <img src="{% static 'images/profile.jpeg' %}"
+             alt="Portrait of Jyostni Mohinta">
+    </div>
+
+</section>
+
+
+<!-- STATISTICS -->
+
+<section class="statistics">
+
+    <div class="stat-card">
+        <h2>9.08</h2>
+        <p>Academic CGPA</p>
+    </div>
+
+    <div class="stat-card">
+        <h2>3+</h2>
+        <p>Featured Projects</p>
+    </div>
+
+    <div class="stat-card">
+        <h2>15th</h2>
+        <p>State Rank - AI Olympiad</p>
+    </div>
+
+</section>
+
+
+<!-- ABOUT SECTION -->
+
+<section class="section" id="about">
+
+    <div class="section-heading">
+        <p>GET TO KNOW ME</p>
+        <h2>About <span>Me</span></h2>
+    </div>
+
+    <div class="about-content">
+
+        <div class="about-text">
+            <h3>A curious mind with a passion for technology.</h3>
+
+            <p>
+                I am a Computer Science and Engineering student
+                at Gopalan College of Engineering and Management,
+                Bengaluru.
+
+                I enjoy exploring different areas of computer
+                science, developing applications and learning
+                how technology can solve real-world problems.
+            </p>
+
+            <p>
+                My interests include Machine Learning,
+                Quantum Computing, Software Development
+                and building intelligent applications.
+            </p>
+
+            <p>
+                I believe in continuous learning, experimenting
+                with new ideas and improving my problem-solving
+                abilities through practical projects.
+            </p>
+        </div>
+
+        <div class="about-details">
+            <div>
+                <span>Degree</span>
+                <strong>B.E. Computer Science</strong>
+            </div>
+
+            <div>
+                <span>College</span>
+                <strong>GCEM, Bengaluru</strong>
+            </div>
+
+            <div>
+                <span>Interests</span>
+                <strong>ML & Quantum Computing</strong>
+            </div>
+
+            <div>
+                <span>Career Goal</span>
+                <strong>Software Development</strong>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- EDUCATION SECTION -->
+
+<section class="section light-section" id="education">
+
+    <div class="section-heading">
+        <p>MY ACADEMIC JOURNEY</p>
+        <h2>Education</h2>
+    </div>
+
+    <div class="timeline">
+
+        <div class="timeline-item">
+            <span>2024 - 2028</span>
+            <h3>Bachelor of Engineering - CSE</h3>
+            <h4>Gopalan College of Engineering and Management</h4>
+            <p>CGPA: 9.08</p>
+        </div>
+
+        <div class="timeline-item">
+            <span>2024</span>
+            <h3>Class XII - CBSE (PCMB)</h3>
+            <h4>Vagdevi Vilas School, Bengaluru</h4>
+            <p>Percentage: 80%</p>
+        </div>
+
+        <div class="timeline-item">
+            <span>2022</span>
+            <h3>Class X - CBSE</h3>
+            <h4>Vagdevi Vilas School, Bengaluru</h4>
+            <p>Percentage: 89%</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SKILLS SECTION -->
+
+<section class="section" id="skills">
+
+    <div class="section-heading">
+        <p>WHAT I WORK WITH</p>
+        <h2>Technical <span>Skills</span></h2>
+    </div>
+
+    <div class="skills-grid">
+
+        <div class="skill-card">
+            <i class="fa-solid fa-code"></i>
+            <h3>Programming</h3>
+            <p>Python, Java, C, JavaScript</p>
+        </div>
+
+        <div class="skill-card">
+            <i class="fa-solid fa-globe"></i>
+            <h3>Web Development</h3>
+            <p>HTML, CSS, JavaScript, Django, Flask, REST APIs</p>
+        </div>
+
+        <div class="skill-card">
+            <i class="fa-solid fa-database"></i>
+            <h3>Database</h3>
+            <p>MySQL, DBMS</p>
+        </div>
+
+        <div class="skill-card">
+            <i class="fa-solid fa-brain"></i>
+            <h3>Machine Learning</h3>
+            <p>Random Forest, Gradient Boosting, Ensemble Models</p>
+        </div>
+
+        <div class="skill-card">
+            <i class="fa-solid fa-diagram-project"></i>
+            <h3>Core Concepts</h3>
+            <p>DSA, Algorithms, OS, Graph Theory</p>
+        </div>
+
+        <div class="skill-card">
+            <i class="fa-solid fa-lightbulb"></i>
+            <h3>Soft Skills</h3>
+            <p>Analytical Thinking, Creativity, Logical Reasoning, Attention to Detail</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PROJECTS SECTION -->
+
+<section class="section light-section" id="projects">
+
+    <div class="section-heading">
+        <p>WHAT I'VE BEEN BUILDING</p>
+        <h2>My <span>Projects</span></h2>
+    </div>
+
+    <div class="projects-grid">
+
+        <div class="project-card">
+            <div class="project-icon">
+                <i class="fa-solid fa-shield-halved"></i>
+            </div>
+
+            <span class="project-status">In Development</span>
+
+            <h3>InsureCore</h3>
+
+            <p>
+                A Django-based insurance management
+                application with MySQL database integration.
+                Previously developed InsureHub, a Flask
+                insurance marketplace with four user roles
+                and analytics dashboards.
+            </p>
+
+            <div class="tags">
+                <span>Python</span>
+                <span>Django</span>
+                <span>MySQL</span>
+            </div>
+        </div>
+
+
+        <div class="project-card">
+            <div class="project-icon">
+                <i class="fa-solid fa-robot"></i>
+            </div>
+
+            <span class="project-status completed">Developed</span>
+
+            <h3>Jasmine - AI Personal Assistant</h3>
+
+            <p>
+                A Python voice assistant featuring speech
+                recognition, weather updates, news integration
+                and OpenAI-powered conversations.
+            </p>
+
+            <div class="tags">
+                <span>Python</span>
+                <span>OpenAI API</span>
+                <span>Speech Recognition</span>
+            </div>
+        </div>
+
+
+        <div class="project-card">
+            <div class="project-icon">
+                <i class="fa-solid fa-cloud-sun"></i>
+            </div>
+
+            <span class="project-status completed">Developed</span>
+
+            <h3>Weather Forecasting Application</h3>
+
+            <p>
+                A responsive weather application with GPS-based
+                location search, real-time weather updates
+                and 7-day forecasts.
+            </p>
+
+            <div class="tags">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+                <span>OpenWeather API</span>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CERTIFICATIONS -->
+
+<section class="section" id="certifications">
+
+    <div class="section-heading">
+        <p>CONTINUOUS LEARNING</p>
+        <h2>Certifications & <span>Achievements</span></h2>
+    </div>
+
+    <div class="achievement-grid">
+
+        <div class="achievement-card">
+            <i class="fa-solid fa-certificate"></i>
+            <div>
+                <h3>NPTEL - Computer Networks</h3>
+                <p>2026 | Top 2% among learners</p>
+            </div>
+        </div>
+
+        <div class="achievement-card">
+            <i class="fa-solid fa-certificate"></i>
+            <div>
+                <h3>NPTEL - Algorithmic Graph Theory and Data Structures</h3>
+                <p>2026</p>
+            </div>
+        </div>
+
+        <div class="achievement-card">
+            <i class="fa-solid fa-certificate"></i>
+            <div>
+                <h3>NPTEL - Operating System Fundamentals</h3>
+                <p>2025</p>
+            </div>
+        </div>
+
+        <div class="achievement-card">
+            <i class="fa-solid fa-certificate"></i>
+            <div>
+                <h3>Coursera - Java Fundamental Application</h3>
+                <p>2025</p>
+            </div>
+        </div>
+
+        <div class="achievement-card">
+            <i class="fa-solid fa-trophy"></i>
+            <div>
+                <h3>National AI Olympiad</h3>
+                <p>2025 | 15th State-Level Rank</p>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ACTIVITIES SECTION -->
+
+<section class="section light-section" id="activities">
+
+    <div class="section-heading">
+        <p>LEARNING BEYOND CLASSROOMS</p>
+        <h2>Events & <span>Activities</span></h2>
+    </div>
+
+    <div class="activities-grid">
+
+        <div class="activity-card">
+            <i class="fa-solid fa-laptop-code"></i>
+            <h3>Smart India Hackathon</h3>
+            <p>Participated in SIH 2026.</p>
+        </div>
+
+        <div class="activity-card">
+            <i class="fa-solid fa-atom"></i>
+            <h3>Quantum Pitch Fest</h3>
+            <p>Attended at IISc, Bengaluru.</p>
+        </div>
+
+        <div class="activity-card">
+            <i class="fa-solid fa-microphone"></i>
+            <h3>TEDxGCEM</h3>
+            <p>Attended TEDxGCEM and explored new perspectives.</p>
+        </div>
+
+        <div class="activity-card">
+            <i class="fa-solid fa-atom"></i>
+            <h3>Qiskit Fall Fest 2026</h3>
+            <p>
+                Attended the three-day quantum computing event
+                conducted by the University of Calcutta in
+                collaboration with IBM Quantum.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT SECTION -->
+
+<section class="section contact-section" id="contact">
+
+    <div class="section-heading">
+        <p>LET'S CONNECT</p>
+        <h2>Get In <span>Touch</span></h2>
+    </div>
+
+    <p class="contact-description">
+        Interested in technology, collaboration or
+        opportunities? I'd love to connect and learn together.
+    </p>
+
+    <div class="contact-links">
+
+        <a href="mailto:jyostni.mohinta@gmail.com">
+            <i class="fa-solid fa-envelope"></i>
+            jyostni.mohinta@gmail.com
+        </a>
+
+        <a href="https://www.linkedin.com/in/jyostni-mohinta/"
+           target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-linkedin"></i>
+            LinkedIn Profile
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer class="footer">
+
+
+    <p>Designed & Built by Jyostni Mohinta</p>
+
+    <p>&copy; <span id="year"></span> All Rights Reserved.</p>
+</footer>
+
+
+<script src="{% static 'js/script.js' %}"></script>
+
+</body>
+</html>
