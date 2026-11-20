@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Login</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'shop/css/admin.css' %}">
+</head>
+<body>
+
+<div class="login-container">
+
+    <h2>Admin Login</h2>
+    <p>Sign in to manage your store</p>
+
+    {% for message in messages %}
+        <p>{{ message }}</p>
+    {% endfor %}
+
+    <form method="POST">
+        {% csrf_token %}
+
+        <input type="text"
+               name="username"
+               placeholder="Username"
+               required>
+
+        <input type="password"
+               name="password"
+               placeholder="Password"
+               required>
+
+        <button type="submit">Login</button>
+    </form>
+
+</div>
+
+</body>
+</html>

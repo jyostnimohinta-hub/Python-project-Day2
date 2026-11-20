@@ -1,0 +1,158 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Cart | ShopEase</title>
+
+    <link rel="stylesheet" href="{% static 'shop/css/style.css' %}">
+</head>
+
+<body>
+
+<header class="navbar">
+    <a href="{% url 'shop:product_list' %}" class="logo">
+        ShopEase
+    </a>
+
+    <nav>
+        <a href="{% url 'shop:product_list' %}">Continue Shopping</a>
+        <a href="{% url 'shop:cart_detail' %}">My Cart</a>
+    </nav>
+</header>
+
+<main class="container cart-container">
+
+    <h1>My Shopping Cart</h1>
+    <p class="subtitle">Review your selected products.</p>
+
+    {% if messages %}
+        {% for message in messages %}
+            <div class="message {{ message.tags }}">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
+
+    {% if items %}
+
+        <div class="cart-layout">
+
+            <section class="cart-items">
+
+                {% for item in items %}
+
+                    <div class="cart-item">
+
+                        <div class="cart-product-details">
+
+                            <h3>{{ item.product.name }}</h3>
+
+                            <p>Price: ₹{{ item.product.price }}</p>
+
+                            <p class="subtotal">
+                                Subtotal: ₹{{ item.line_total }}
+                            </p>
+
+                        </div>
+
+                        <form method="post"
+                              action="{% url 'shop:cart_update' item.product.id %}"
+                              class="quantity-form">
+
+                            {% csrf_token %}
+
+                            <label>Quantity</label>
+
+                            <div class="quantity-control">
+
+                                <button type="button"
+                                        class="quantity-btn decrease">
+                                    −
+                                </button>
+
+                                <input type="number"
+                                       name="quantity"
+                                       value="{{ item.quantity }}"
+                                       min="0"
+                                       max="{{ item.product.stock }}"
+                                       class="quantity-input">
+
+                                <button type="button"
+                                        class="quantity-btn increase">
+                                    +
+                                </button>
+
+                            </div>
+
+                            <button type="submit" class="update-btn">
+                                Update Cart
+                            </button>
+
+                        </form>
+
+                    </div>
+
+                {% endfor %}
+
+            </section>
+
+            <aside class="order-summary">
+
+                <h2>Order Summary</h2>
+
+                <div class="summary-row">
+                    <span>Products</span>
+                    <span>{{ items|length }}</span>
+                </div>
+
+                <div class="summary-row total-row">
+                    <span>Total Amount</span>
+                    <span>₹{{ total }}</span>
+                </div>
+
+                <button type="button"
+                        class="checkout-btn"
+                        onclick="alert('Checkout will be available soon!')">
+                    Proceed to Checkout
+                </button>
+
+                <a href="{% url 'shop:product_list' %}"
+                   class="continue-link">
+                    Continue Shopping
+                </a>
+
+            </aside>
+
+        </div>
+
+    {% else %}
+
+        <div class="empty-cart">
+
+            <h2>Your cart is empty!</h2>
+
+            <p>You haven't added any products yet.</p>
+
+            <a href="{% url 'shop:product_list' %}" class="hero-btn">
+                Start Shopping
+            </a>
+
+        </div>
+
+    {% endif %}
+
+</main>
+
+<footer>
+    <p>© 2026 ShopEase. All rights reserved.</p>
+</footer>
+
+<script src="{% static 'shop/js/cart.js' %}"></script>
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Dashboard</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'shop/css/admin.css' %}">
+</head>
+<body>
+
+<div class="sidebar">
+
+    <h2>Shop Admin</h2>
+
+    <a href="{% url 'admin_dashboard' %}">Dashboard</a>
+    <a href="#">Products</a>
+    <a href="#">Orders</a>
+    <a href="#">Customers</a>
+    <a href="#">Sales Reports</a>
+    <a href="{% url 'admin_logout' %}">Logout</a>
+
+</div>
+
+<div class="main-content">
+
+    <h1>Welcome, {{ request.user.username }}</h1>
+    <p>Manage your shopping store from here.</p>
+
+    <div class="dashboard-cards">
+
+        <div class="card">
+            <h3>Total Products</h3>
+            <h2>0</h2>
+        </div>
+
+        <div class="card">
+            <h3>Total Orders</h3>
+            <h2>0</h2>
+        </div>
+
+        <div class="card">
+            <h3>Total Customers</h3>
+            <h2>0</h2>
+        </div>
+
+        <div class="card">
+            <h3>Total Sales</h3>
+            <h2>₹0</h2>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

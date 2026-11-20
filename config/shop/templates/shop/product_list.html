@@ -1,0 +1,118 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ShopEase | Online Shopping</title>
+
+    <link rel="stylesheet" href="{% static 'shop/css/style.css' %}">
+</head>
+
+<body>
+
+<header class="navbar">
+    <a href="{% url 'shop:product_list' %}" class="logo">
+        ShopEase
+    </a>
+
+    <nav>
+        <a href="{% url 'shop:product_list' %}">Home</a>
+        <a href="{% url 'shop:cart_detail' %}" class="cart-link">
+            My Cart
+            <span class="cart-count">{{ cart_count|default:0 }}</span>
+        </a>
+    </nav>
+</header>
+
+<section class="hero">
+    <div>
+        <h1>Find Your Everyday Essentials</h1>
+        <p>Discover quality products at great prices.</p>
+        <a href="#products" class="hero-btn">Explore Products</a>
+    </div>
+</section>
+
+<main class="container" id="products">
+
+    <div class="section-heading">
+        <h2>Our Products</h2>
+        <p>Choose your favourite products and add them to your cart.</p>
+    </div>
+
+    {% if messages %}
+        {% for message in messages %}
+            <div class="message {{ message.tags }}">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
+
+    <div class="product-grid">
+
+        {% for product in products %}
+
+            <div class="product-card">
+
+                {% if product.image %}
+                    <img src="{{ product.image.url }}"
+                         alt="{{ product.name }}"
+                         class="product-image">
+                {% else %}
+                    <div class="image-placeholder">
+                        No Image Available
+                    </div>
+                {% endif %}
+
+                <div class="product-info">
+
+                    <h3>{{ product.name }}</h3>
+
+                    <p class="description">
+                        {{ product.description }}
+                    </p>
+
+                    <p class="price">
+                        ₹{{ product.price }}
+                    </p>
+
+                    <p class="stock">
+                        {{ product.stock }} available
+                    </p>
+
+                    <form method="post"
+                          action="{% url 'shop:cart_add' product.id %}">
+
+                        {% csrf_token %}
+
+                        <button type="submit" class="add-btn">
+                            Add to Cart
+                        </button>
+
+                    </form>
+
+                </div>
+            </div>
+
+        {% empty %}
+
+            <p>No products are currently available.</p>
+
+        {% endfor %}
+
+    </div>
+
+</main>
+
+<footer>
+    <p>© 2026 ShopEase. All rights reserved.</p>
+</footer>
+
+<script src="{% static 'shop/js/cart.js' %}"></script>
+
+</body>
+</html>
+
